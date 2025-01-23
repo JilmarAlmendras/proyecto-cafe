@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     borderBottomWidth: 1,
-    borderBottomColor: '#000',
+    borderBottomColor: "#000",
     paddingBottom: 5,
     marginBottom: 5,
   },
@@ -53,12 +53,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   total: {
-    textAlign: 'right',
+    textAlign: "right",
   },
   footer: {
     marginTop: 20,
     borderTopWidth: 1,
-    borderTopColor: '#000',
+    borderTopColor: "#000",
     paddingTop: 10,
     textAlign: "center",
   },
@@ -81,12 +81,11 @@ export interface VentaFactura extends Venta {
 const PdfDocumento = ({ invoice }: { invoice: VentaFactura }) => {
   const formattedDate = new Date(invoice.fecha).toLocaleString();
 
-
   return (
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.header}>
-          <Text style={styles.company}>Makeup Your Self</Text>
+          <Text style={styles.company}>Your hot coffee</Text>
           <Text style={styles.title}>Factura</Text>
         </View>
         <View style={styles.section}>
@@ -111,17 +110,21 @@ const PdfDocumento = ({ invoice }: { invoice: VentaFactura }) => {
               <Text style={styles.text}>{detalle.producto.nombre}</Text>
               <Text style={styles.text}>Bs.{detalle.precio.toFixed(2)}</Text>
               <Text style={styles.text}>{detalle.cantidad}</Text>
-              <Text style={styles.text}>Bs.{(detalle.precio * detalle.cantidad).toFixed(2)}</Text>
+              <Text style={styles.text}>
+                Bs.{(detalle.precio * detalle.cantidad).toFixed(2)}
+              </Text>
             </View>
           ))}
         </View>
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Total:</Text>
-          <Text style={[styles.text, styles.total]}>Bs.{invoice.totalConDescuento.toFixed(2)}</Text>
+          <Text style={[styles.text, styles.total]}>
+            Bs.{invoice.totalConDescuento.toFixed(2)}
+          </Text>
         </View>
         <View style={styles.footer}>
           <Text style={styles.text}>Gracias por su compra</Text>
-          <Text style={styles.text}>Makeup Your Self</Text>
+          <Text style={styles.text}>Your hot coffee</Text>
         </View>
       </Page>
     </Document>

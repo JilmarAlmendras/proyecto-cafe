@@ -92,7 +92,7 @@ const PdfReporte = ({
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.header}>
-          <Text style={styles.company}>Makeup Your Self</Text>
+          <Text style={styles.company}>Your hot coffee</Text>
           <Text style={styles.title}>Reporte de Ventas</Text>
         </View>
         <View style={styles.section}>
@@ -127,7 +127,7 @@ const PdfReporte = ({
         </View>
         <View style={styles.footer}>
           <Text style={styles.text}>Gracias por su preferencia</Text>
-          <Text style={styles.text}>Makeup Your Self</Text>
+          <Text style={styles.text}>Your hot coffee</Text>
         </View>
       </Page>
     </Document>

@@ -13,7 +13,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Makeup your self",
+  title: "Your hot coffee",
   description: "sistema tienda de maquillaje",
 };
 
@@ -33,7 +33,7 @@ export default function RootLayout({
         <Providers>
           <PrivatePage>
             <main className="container mx-auto">
-              <NavbarHandler /> {/*  el nuevo componente aquí */}
+              <NavbarHandler />
               {children}
             </main>
           </PrivatePage>

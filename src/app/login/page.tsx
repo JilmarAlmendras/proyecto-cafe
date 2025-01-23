@@ -12,7 +12,7 @@ import {
 import { useState, useEffect } from "react";
 import { signIn } from "next-auth/react";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
   const [usuario, setUsuario] = useState("");
@@ -33,20 +33,19 @@ function Login() {
         pauseOnHover: true,
         draggable: true,
         style: {
-          fontSize: '16px',
-          backgroundColor: '#FFEB3B',
-          color: '#000',
-          padding: '10px',
-          borderRadius: '8px',
-          boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)'
-        }
+          fontSize: "16px",
+          backgroundColor: "#FFEB3B",
+          color: "#000",
+          padding: "10px",
+          borderRadius: "8px",
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+        },
       });
-
     }
 
     if (attempts >= 5) {
       setBlocked(true);
-      const unblockTime = 300; 
+      const unblockTime = 300;
       setTimeLeft(unblockTime);
       const interval = setInterval(() => {
         setTimeLeft((prev) => prev - 1);
@@ -59,17 +58,23 @@ function Login() {
         clearInterval(interval);
       }, unblockTime * 1000);
 
-      setErrorMessage(`Límite alcanzado. Debe esperar 5 minutos para volver a intentar.`);
+      setErrorMessage(
+        `Límite alcanzado. Debe esperar 5 minutos para volver a intentar.`
+      );
       return () => clearInterval(interval);
     }
   }, [attempts]);
 
   async function handleFormSubmit(ev: any) {
     ev.preventDefault();
-    setErrorMessage(""); 
+    setErrorMessage("");
 
     if (blocked) {
-      setErrorMessage(`Límite alcanzado. Debe esperar ${Math.ceil(timeLeft / 60)} minuto(s) y ${timeLeft % 60} segundo(s) para volver a intentar.`);
+      setErrorMessage(
+        `Límite alcanzado. Debe esperar ${Math.ceil(
+          timeLeft / 60
+        )} minuto(s) y ${timeLeft % 60} segundo(s) para volver a intentar.`
+      );
       return;
     }
 
@@ -93,8 +98,7 @@ function Login() {
         usuario,
         contrasena,
         redirect: false,
-        callbackUrl: "/"
-
+        callbackUrl: "/",
       });
 
       if (!r || r.error) {
@@ -122,11 +126,11 @@ function Login() {
             alt="nextui logo"
             height={40}
             radius="sm"
-            src="/makeup.png"
+            src="/coffee.png"
             width={40}
           />
           <div className="flex flex-col">
-            <p className="text-lg font-bold">Makeup your self</p>
+            <p className="text-lg font-bold">Your hot coffee</p>
             <p className="text-sm text-gray-500">Iniciar sesión</p>
           </div>
         </CardHeader>
@@ -156,7 +160,10 @@ function Login() {
             disabled={blocked}
           />
           {blocked && (
-            <p className="text-red-500 text-sm text-center">Falta {Math.ceil(timeLeft / 60)} minuto(s) y {timeLeft % 60} segundo(s) para poder ingresar de nuevo.</p>
+            <p className="text-red-500 text-sm text-center">
+              Falta {Math.ceil(timeLeft / 60)} minuto(s) y {timeLeft % 60}{" "}
+              segundo(s) para poder ingresar de nuevo.
+            </p>
           )}
         </CardBody>
         <Divider />

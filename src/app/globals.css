@@ -1,30 +1,29 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
 
-  
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 346.8 77.2% 49.8%;
-    --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 346.8 77.2% 49.8%;
-    --radius: 0.75rem;
+    --background: 0 0% 100%; /* Fondo original */
+    --foreground: 240 10% 3.9%; /* Texto en negro original */
+    --card: 30 30% 20%; /* Fondo de tarjetas en café oscuro */
+    --card-foreground: 240 10% 3.9%; /* Texto en tarjetas en negro */
+    --popover: 30 30% 18%; /* Fondo de popover */
+    --popover-foreground: 240 10% 3.9%; /* Texto de popover en negro */
+    --primary: 30 40% 35%; /* Café oscuro */
+    --primary-foreground: 30 30% 90%; /* Texto claro en botones primarios */
+    --secondary: 30 30% 45%; /* Café medio */
+    --secondary-foreground: 30 30% 80%; /* Texto sobre elementos secundarios */
+    --muted: 30 30% 50%; /* Café grisáceo para elementos secundarios */
+    --muted-foreground: 30 20% 75%; /* Texto suave sobre elementos muted */
+    --accent: 30 50% 40%; /* Detalles de acento café intenso */
+    --accent-foreground: 30 30% 95%; /* Texto en acentos */
+    --destructive: 0 50% 40%; /* Rojo oscuro para acciones destructivas */
+    --destructive-foreground: 0 0% 95%; /* Texto claro en destructivos */
+    --border: 30 30% 25%; /* Bordes en tonos café */
+    --input: 30 30% 25%; /* Fondo de entradas */
+    --ring: 30 50% 45%; /* Resaltado en tonos café */
+    --radius: 0.75rem; /* Radios sin cambios */
   }
 
   .dark {
@@ -50,25 +49,24 @@
   }
 }
 
-
-  @layer base {
-    * {
-      @apply border-border;
-    }
-    body {
-      @apply bg-background text-foreground;
-    }
+@layer base {
+  * {
+    @apply border-border;
   }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
 
-  /* styles.css */
+/* styles.css */
 
 /* Para navegadores Webkit (Chrome, Safari, etc.) */
-input[type='number']::-webkit-outer-spin-button,
-input[type='number']::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
   @apply appearance-none m-0;
 }
 
 /* Para Firefox */
-input[type='number'] {
+input[type="number"] {
   @apply appearance-none;
 }

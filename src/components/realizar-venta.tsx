@@ -9,6 +9,7 @@ import { Descuento } from "@prisma/client";
 import { useProducts } from "@/context/contexto-producto";
 import { toast } from "react-toastify";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 
 function RealizarVenta() {
   const {
@@ -100,7 +101,7 @@ function RealizarVenta() {
           {detallesVenta.totalConDescuento} Bs.
         </p>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center gap-3">
         <Button
           className="w-[100px] "
           isLoading={realizandoVenta}
@@ -116,6 +117,9 @@ function RealizarVenta() {
           }}
         >
           Vender
+        </Button>
+        <Button as={Link} href="/venta-en-linea" color="primary">
+          Venta en linea
         </Button>
       </div>
     </Card>

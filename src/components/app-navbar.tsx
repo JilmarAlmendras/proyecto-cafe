@@ -89,10 +89,10 @@ export function AppNavbar() {
               alt="nextui logo"
               height={32}
               radius="sm"
-              src="/makeup.png"
+              src="/coffee.png"
               width={32}
             />
-            <h1 className="font-bold text-primary">MYS</h1>
+            <h1 className="font-bold text-primary">YHC</h1>
           </Link>
         </NavbarBrand>
       </NavbarContent>
