@@ -80,7 +80,7 @@ function VentaEnLinea() {
               </div>
             </div>
             <div className="mt-4 flex justify-end">
-              <Button href="/finalizar-venta-online" as={Link} color="primary">
+              <Button href="/realizar-ventas" as={Link} color="primary">
                 Continuar
               </Button>
             </div>

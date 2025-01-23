@@ -102,6 +102,9 @@ function RealizarVenta() {
         </p>
       </div>
       <div className="flex justify-center gap-3">
+        <Button as={Link} href="/venta-en-linea" color="primary">
+          Agregar tarjeta
+        </Button>
         <Button
           className="w-[100px] "
           isLoading={realizandoVenta}
@@ -111,15 +114,12 @@ function RealizarVenta() {
             setRealizandoVenta(true);
             const res = await realizarVenta(idEmpleado);
             if (res) {
-              toast.success("Venta realizada exitosamente!");
+              toast.success("Compra realizada exitosamente!");
             }
             setRealizandoVenta(false);
           }}
         >
-          Vender
-        </Button>
-        <Button as={Link} href="/venta-en-linea" color="primary">
-          Venta en linea
+          Comprar
         </Button>
       </div>
     </Card>

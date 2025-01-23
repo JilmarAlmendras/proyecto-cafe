@@ -41,7 +41,7 @@ export function AppNavbar() {
   const menuItems = [
     {
       roles: ["administrador", "empleado"],
-      name: "Realizar venta",
+      name: "Realizar compra",
       href: "/realizar-ventas",
     },
     {
